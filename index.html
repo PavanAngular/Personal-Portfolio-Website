@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamaravalli Pavan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50; /* A vibrant green */
+            --secondary-color: #2196F3; /* A bright blue */
+            --text-color: #333;
+            --light-text-color: #f4f4f4;
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --gradient-bg: linear-gradient(135deg, #4CAF50, #2196F3);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--gradient-bg);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: transform 0.3s ease-in-out;
+            display: inline-block;
+        }
+        
+        .contact-info a:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-info a i {
+            margin-right: 8px;
+        }
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 20px;
+            font-size: 1em;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        .navbar a:hover {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .section {
+            background: var(--card-bg);
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .section p {
+            font-size: 1.1em;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: var(--bg-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .skill-tag:hover {
+            background: var(--secondary-color);
+            color: var(--light-text-color);
+            transform: translateY(-5px);
+        }
+        
+        .project-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background: #fafafa;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .project-card .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .project-card .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 10px;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+            header h1 {
+                font-size: 2.5em;
+            }
+            .navbar {
+                display: block;
+                padding: 10px 0;
+                overflow-x: auto;
+                white-space: nowrap;
+                text-align: left;
+            }
+            .navbar a {
+                margin: 0 10px;
+            }
+            .section {
+                padding: 20px;
+            }
+            .contact-info a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Vamaravalli Pavan</h1>
+            <p>Aspiring Technology Professional | MCA Student</p>
+            <div class="contact-info">
+                <a href="mailto:vamaravallipavanpavan@gmail.com" target="_blank"><i class="fas fa-envelope"></i> vamaravallipavanpavan@gmail.com</a>
+                <a href="tel:+917382082800"><i class="fas fa-phone"></i> +91-7382082800 </a>
+                <a href="https://www.linkedin.com/in/vamaravalli-pavan-3792b5250" target="www.linkedin.com/in/vamaravalli-pavan-3792b5250"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <a href="#objective">Objective</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#personal">Personal</a>
+    </nav>
+
+    <main class="container">
+        <section id="objective" class="section">
+            <h2>Career Objective</h2>
+            <p>To secure an entry-level position in a forward-thinking organization where I can apply my knowledge and skills in technology, contribute to team success, and grow professionally while supporting the company's mission and goals.</p>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Educational Qualifications</h2>
+            <ul>
+                <li><strong>M.C.A</strong> - Vignan's Foundation for Science, Technology & Research, Vadlamudi, Guntur (Pursuing 2026) - 7.6 CGPA.</li>
+                <li><strong>B.C.A</strong> - Zenex vision Degree College, Nellore (2024) - 8.3 CGPA.</li>
+                <li><strong>Intermediate</strong> - Krishna Chaitanya Junior College, Nellore (2021) - 7.0.</li>
+                <li><strong>SSC</strong> - Kakatiya EM High School, Narkatpally (2019) - 9.2.</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <div class="skill-list">
+               <span class="skill-tag"><i class="fas fa-C"></i> C </span>
+                <span class="skill-tag"><i class="fab fa-java"></i> Java </span>
+                <span class="skill-tag"><i class="fab fa-python"></i> Python </span>
+                <span class="skill-tag"><i class="fab fa-html5"></i> HTML </span>
+                <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS </span>
+                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript </span>
+                <span class="skill-tag"><i class="fas fa-database"></i> SQL Plus </span>
+                <span class="skill-tag"><i class="fas fa-file-alt"></i> MS-Office </span>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Responsive Personal Portfolio Website</h3>
+                <p>Designed and developed a responsive and interactive portfolio to showcase personal skills, academic background, and projects. The website features a dark mode toggle, form validation, and dynamic content display.</p>
+                <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+               <a href="https://pavanangular.github.io/Personal-Portfolio-Website/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View Live </a>
+
+            </div>
+            <div class="project-card">
+                <h3>CineBook - A Real-Time Movie Booking System</h3>
+                <p>An online platform for booking movie tickets with a complete user journey from selecting a city and movie to choosing seats. It uses a real-time database to ensure accurate, up-to-the-minute seat availability and prevent double-bookings.</p>
+                <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Google Firebase (Cloud Firestore, Authentication) </p>
+                <a href="https://pavanangular.github.io/Cinebook/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View Live </a>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Secured a Participation Certificate in a National-level coding competition conducted by Naukri.com.</li>
+                <li>Certified in Web Designing and Digital Marketing at Indian Servers, Vijayawada.</li>
+            </ul>
+        </section>
+
+        <section id="personal" class="section">
+            <h2>Personal Profile</h2>
+            <ul>
+                <li><strong>Father's Name:</strong> Mr. Vamaravalli Anandarao </li>
+                <li><strong>Mother's Name:</strong> Mrs. Vamaravalli Rajeswari </li>
+                <li><strong>Languages Known:</strong> English, Telugu & Hindi </li>
+                <li><strong>Hobbies and Interests:</strong> Travelling, Playing Games </li>
+                <li><strong>Address:</strong> 1-2-43, Nawabpet Main Road, Nellore, 524002 </li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>11:06 PM 8/4/2025
